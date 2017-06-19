@@ -1,0 +1,345 @@
+*{margin:0;padding:0;}
+html,body{height:100%;overflow:hidden;}
+p{font-size:5.5vw;font-family:Microsoft YaHei ;color:#BCFFF9;line-height:9vw;}
+.text{position:absolute;}
+
+#text1{top:19%;left:55%;height:50%;animation: text1 1s ;}
+#text1 > .text1p{width:5.5vw;position:absolute;opacity: 0;animation-fill-mode: forwards;}
+#text1p1{font-size:10vw;line-height: 12vw;top:5vw;left:16vw;animation: 4s text1tmove 1.2s ;}
+#text1p2{top:0;left:8vw;animation: 3s text1move 5.2s ;}
+#text1p3{top:0;left:16vw;animation: 3s text1move 8.2s ;}
+#text1p4{top:0;left:24vw;animation: 3s text1move 11.2s ;}
+#text1p5{top:0;left:32vw;animation: 3s text1move 14.2s ;}
+@keyframes text1 {0%{transform: translateX(-150%);}80%{transform: translateX(10%);}100%{transform: translateX(0);}}
+@keyframes text1move {0%{opacity: 0;}50%{opacity: 1;}100%{opacity: 0;}}
+@keyframes text1tmove {0%{opacity:0;}10%{opacity:1;}50%{opacity:1;}100%{opacity:1; transform:translateX(-25vw);}}
+
+#text2{top:10%;left:12%;}
+#text2 .text2p{width:5.5vw;position:absolute;animation-fill-mode: forwards;opacity: 0;}
+#text2p1{top:0;left:0;animation:2s text2 1s;}
+#text2p2{top:0;left:10vw;animation:2s text2 3s;}
+#text2p3{top:0;left:20vw;animation:2s text2 5s;}
+@keyframes text2 {0%{transform: translateX(-150%);opacity: 0;}50%{transform: translateX(10%);opacity: 0;}100%{transform: translateX(0);opacity: 1;}}
+
+#text3{position:absolute;top:12%;left:50%;animation:text3 1.2s linear;}
+#text3 .text3p{position:absolute;width:5.5vw;}
+#text3p0{top:0;left:-5vw;width:10vw;font-size:7.5vw;}
+#text3p1{top:0;left:10vw;animation:text3 2.2s linear;}
+#text3p2{top:0;left:20vw;animation:text3 3.7s linear;}
+#text3p3{top:0;left:30vw;animation:text3 5.2s linear;}
+@keyframes text3 {0%{opacity: 0;}80%{opacity: 0;}100%{opacity: 1;}}
+
+#text4{top:15%;left:10%;}
+#text4>p{writing-mode: horizontal-tb;}
+#text4 .taitou{font-size: 7.5vw;margin:2vw auto;animation: textp 1.2s linear;}
+#text4 .textp1{animation: textp 1.5s linear;}
+#text4 .textp2{animation: textp 2s linear;}
+#text4 .textp3{animation: textp 2.5s linear;}
+#text4 .textp4{animation: textp 3s linear;}
+@keyframes textp {0%{transform: translateX(-300%);}100%{transform: translateX(0);}}
+
+#text5{left:5%;top:10%;width:94%;height:70%;position:relative;}
+#text5 p{font-size:7vw;position:absolute;top:15%;opacity: 0;}
+#text5 .text5move1{animation: 2s text5move 2s linear;}
+#text5 .text5move2{animation: 2s text5move 4s linear;}
+#text5 .text5move3{animation: 2s text5move 6s linear;}
+#text5 .text5move4{animation: 2s text5move 8s linear;}
+#text5 .text5move5{animation: 2s text5move2 10s linear;animation-fill-mode: forwards;letter-spacing: 3vw;font-size:10vw;}
+@keyframes text5move {0%{opacity: 0;}10%{opacity: 1;}90%{opacity: 1;}100%{opacity: 0;}}
+@keyframes text5move2{0%{opacity: 0;}10%{opacity: 1;}90%{opacity: 1;}100%{opacity: 1;}}
+
+
+
+.page
+{
+
+	height:100%;
+	width:100%;
+	position:absolute;
+}
+
+#music
+{
+	position:fixed;
+	top:3vh;
+	right:5vw;
+	width:15vw;
+	height:15vw;
+	border-radius: 50%;
+	z-index:999;
+	background-image:url(../image/guangpan.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size:200%;
+}
+
+#music > img
+{
+	height:100%;
+} 
+.musiczhuan
+{
+	animation: musiczhuan 4s linear infinite;
+}
+@keyframes musiczhuan{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(360deg);}
+}
+.page > .bg
+{
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position:absolute;
+	height:100%;	
+	width:100%;
+
+}
+#page1 .bg
+{
+	background-image: url(../image/page1bg.jpg);
+}
+#page2 .bg
+{
+	background-image: url("../image/page2bg.jpg");
+}
+#page2 > .quan
+{
+	position:absolute;
+	width:59vw;
+	height:59vw;
+	top:0;right:0;bottom:0;left:0;
+	margin:auto;
+
+	background-image: url("../image/wai.png");
+	background-size:100%;
+	border-radius:50%;
+	animation: zhuan3 2s linear infinite 1.5s;
+}
+@keyframes zhuan3{
+	0%{transform: rotate(0);}
+	100%{transform: rotate(-360deg);}
+}
+#page2 > .quan:before
+{
+	position:absolute;
+	width:40vw;
+	height:40vw;
+	top:0;right:0;bottom:0;left:0;
+	margin:auto;
+	content:"";
+	background-image: url("../image/nei.png");
+	background-size:100%;
+	border-radius:50%;
+	animation: zhuan1 2s linear infinite .5s;
+}
+@keyframes zhuan1{
+	0%{transform: rotate(0);}
+	100%{transform: rotate(-1080deg);}
+}
+#page2 > .quan:after
+{
+	position:absolute;
+	width:46vw;
+	height:46vw;
+	top:0;right:0;bottom:0;left:0;
+	margin:auto;
+	content:"";
+	background-image: url("../image/zhong.png");
+	background-size:100%;
+	border-radius:50%;
+	animation:  zhuan2 2s linear infinite 1s;
+}
+@keyframes zhuan2{
+	0%{transform: rotate(0);}
+	100%{transform: rotate(720deg);}
+}
+#page3 .bg
+{
+	background-image:url(../image/page3bg.jpg);
+
+}
+#page4 .bg
+{
+	background-image:url(../image/page4bg.jpg);
+
+}
+#page5 .bg
+{
+	background-image:url(../image/page5bg.jpg);
+
+}
+#page6 .bg
+{
+	background-image:url(../image/page6bg.jpg);
+
+}
+#page7 .bg
+{
+	background-image:url(../image/page7bg.jpg);
+
+}
+
+#page1
+{
+	display:block;
+	transition: 1s;
+	opacity: 1;
+		z-index:7;
+}	
+#page1.display
+{
+	opacity: 0;
+}
+#page2
+{	
+		z-index:6;
+	display:none;
+
+}	
+#page2.fadeout
+{
+
+animation: movemove 1s linear;
+    animation-fill-mode: forwards;
+}
+@keyframes movemove{
+	0%{transform: translateY(0);opacity: 1;}
+	100%{transform: translateY(-100%); opacity: 0;}
+}
+#page3
+{
+    display:none;
+	z-index:5;
+}	
+#page4
+{
+	display:none;	 
+	z-index:4;
+}
+
+#page5
+{
+	display:none;
+	 z-index:3;
+}
+#page6
+{
+	display:none;
+    z-index:2;
+}
+
+#page7
+{
+	display:none;
+	z-index:1;
+}
+#page7 .text5title  
+{
+	font-size:10vw;
+	margin:5vw auto;
+	opacity:0;
+	position:absolute;
+	top:30%;
+	left:10%;
+	animation: 2s titlemove 10s linear ;
+	animation-fill-mode: forwards;
+	width:12vw;
+	line-height: 11vw;
+
+}
+@keyframes titlemove {
+	0%{	opacity:0;}
+	50%{opacity:1;}
+	100%{opacity:1;}
+}
+
+
+
+#page7 .ccopy
+{
+	position:absolute;
+	width:22vw;
+	height:10vw;
+	bottom:2vw;
+	left:0;
+	right:0;
+	margin:auto;
+
+}
+#page7 .ccopy p
+{
+	font-size: 4vw;
+	writing-mode: horizontal-tb;
+	font-family: 'KaiTi','黑体';
+	letter-spacing: 1vw;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#hua
+{
+	position:absolute;
+	width:9vw;
+	height:5vw;
+    background-image:url(../image/xiajian.png);
+	bottom:2vw;
+	left:0;
+	right:0;
+	margin:auto;
+	background-size:100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.3;
+	z-index:10;
+	animation: 2s xiajian linear infinite;
+}
+
+@keyframes xiajian{
+	0%{transform: translateY(-1vw) rotate(180deg) ;}
+	50%{transform: translateY(1vw) rotate(180deg) ;}
+	100%{transform: translateY(-1vw)rotate(180deg);}
+}
+/*#xiayiye
+{
+	position:absolute;
+	width:13vw;
+	height:2vw;
+	bottom:10vw;
+	left:0;
+	right:0;
+	margin:auto;
+	z-index:999;
+	display:none;
+	opacity: 0.3;
+}
+#xiayiye span
+{
+	font-size:3vw;
+	font-family:Microsoft YaHei;
+	color:#BCFFF9;
+
+}*/
+
+#pagelow{display:none;}
+#pagelow .bg{background-image:url(../image/beijing.jpg);z-index:-1;}
+

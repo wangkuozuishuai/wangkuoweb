@@ -1,0 +1,20 @@
+*{margin:0; padding:0;}
+ body{background:white;}
+ #c2{width:1300px; height:700px; margin:0 auto; position:relative;
+ 	background:url(../image/183club.jpg) no-repeat; background-size:cover;}
+  #c1{/*background:black;*/position:absolute;/* border:1px solid red;*/top:65px;left:375px;}
+  #c3{position: absolute;
+	visibility: hidden;
+	overflow: hidden;
+	width:550px;
+	height:550px;
+}
+  #c4 {background:url(../image/ha.gif);width:150px;height:139px;position:absolute; left:950px; top:100px; visibility:hidden;}
+  #c5 {background:url(../image/ha.gif);width:150px;height:139px;position:absolute; left:1000px; top:300px; visibility:hidden;}
+  #c6{background:url(../image/ha.gif);width:150px;height:139px;position:absolute; left:200px; top:100px; transform:rotateY(180deg);visibility:hidden;}
+  #c7{background:url(../image/ha.gif);width:150px;height:139px;position:absolute; left:150px; top:300px; transform:rotateY(180deg);visibility:hidden;}
+@keyframes move{
+	0%{transform:scale(0) rotate(0deg);}
+	50%{transform:scale(1.1) rotate(360deg);}
+	100%{transform:scale(1) rotate(720deg);}
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>FBI warning</title>
+	<style>
+
+		#div 
+		{
+			width:300px;
+			height:150px;
+			margin:50px auto;
+	
+		}
+        #fbi
+        {
+            width:300px;
+            height:150px;
+            margin:0 auto;
+            overflow: hidden
+        }
+        #fbi p
+        {   
+            width:200px;
+            font-size:30px;
+            text-align:center;
+            display:block;
+            margin:50px auto;
+           color:white;
+         /*   border:1px solid white;*/
+            background-color: red;
+        }
+
+
+
+html, body {
+  background: #333;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.svg-wrapper {
+
+  height: 60px;
+    margin: 0 auto;
+  position: relative;
+/*  top: 50%;*/
+/*  transform: translateY(-50%);*/
+  width: 320px;
+  cursor: pointer;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  stroke: #19f6e8;
+}
+
+.text {
+  color: #fff;
+  font-family: 'Roboto Condensed';
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 32px;
+  position: relative;
+  top: -48px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+	</style>
+</head>
+<body>
+    <div id="fbi">
+        <p>FBI WARNING</p>
+    </div>
+	<div id="div">
+    <div class=text>
+        未成年人请在成人的监护下浏览本网页</div></div>
+
+    <div class="svg-wrapper" id ="div1">
+  <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+    <rect class="shape" height="60" width="320" />
+  </svg>
+   <div class="text">进入</div>
+</div>
+</body>
+<script>
+window.onload=function(){
+	var div1 = document.getElementById('div1');
+	div1.onclick = function(){
+        div1.style.animation="0.5s draw linear forwards";
+        setTimeout(tiaozhuan,1000);
+
+    }
+}
+function tiaozhuan(){
+        var width= document.documentElement.clientWidth-20
+        if(width<1000)
+        {
+        window.location.href="yidongweb.html";  
+    
+       }
+        else
+       {
+        window.location.href="webmain.html";
+
+       }
+    }
+</script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>别气馁，下一个就是SSR</title>
+	<link rel="stylesheet" href="css/chouka.css" />
+</head>
+<body>
+	<div id = "c2"><canvas id ="c1" width="550" height="550	"></canvas>
+	<div id = "c3"></div>
+	<div id = "c4"></div>
+	<div id = "c5"></div>
+	<div id = "c6"></div>
+	<div id = "c7"></div>
+	</div>
+	
+	
+</body>
+<script>
+ var oB = document.getElementById('c2');
+var oC = document.getElementById('c1');
+var ctx= oC.getContext('2d');
+
+oC.onmousedown = function(oo){
+	var x = oo.pageX-oC.offsetLeft-oB.offsetLeft;
+	var y = oo.pageY-oC.offsetTop-oB.offsetTop;
+	ctx.moveTo(x,y);
+	ctx.lineWidth=5;
+	ctx.strokeStyle="#fff"
+
+oC.onmousemove = function(oo){
+	var x = oo.pageX-oC.offsetLeft-oB.offsetLeft;
+	var y = oo.pageY-oC.offsetTop-oB.offsetTop;
+	ctx.lineTo(x,y);
+	ctx.stroke();
+	};
+oC.onmouseup= function(){
+		oC.onmousemove=null;
+		oC.onmouseup=null;
+		var ob = document.getElementById('c3')
+		c3.style.top="65px";
+		c3.style.left="375px";
+		c3.style.visibility = "visible"; 
+		c3.style.animation="move 0.5s";
+		c3.style.cursor="pointer";
+		c3.onclick=function(){
+			window.location.reload();
+			c3.style.visibility="hidden";
+			}
+		 var x =Math.floor(Math.random()*99+1);
+	if(x==1)
+	 	{c3.style.background= "url(image/1.png)";
+			c4.style.visibility = "visible"; 
+			c5.style.visibility = "visible"; 
+			c6.style.visibility = "visible"; 
+			c7.style.visibility = "visible"; }
+	 else if(x==2)
+	 	{c3.style.background= "url(image/2.png)";
+			c4.style.visibility = "visible"; 
+			c5.style.visibility = "visible"; 
+			c6.style.visibility = "visible"; 
+			c7.style.visibility = "visible"; }
+	 else if(x==3)
+ 	    {c3.style.background= "url(image/3.png)";
+ 			c4.style.visibility = "visible"; 
+			c5.style.visibility = "visible"; 
+			c6.style.visibility = "visible"; 
+			c7.style.visibility = "visible"; }
+	 else if(x==4)
+	 	{c3.style.background= "url(image/4.png)";
+			c4.style.visibility = "visible"; 
+			c5.style.visibility = "visible"; 
+			c6.style.visibility = "visible"; 
+			c7.style.visibility = "visible"; }
+	else if(x==5)
+		{c3.style.background= "url(image/5.png)";
+			c4.style.visibility = "visible"; 
+			c5.style.visibility = "visible"; 
+			c6.style.visibility = "visible"; 
+			c7.style.visibility = "visible"; }
+	 else if(x==6)
+	 	{c3.style.background= "url(image/6.png)";
+		c4.style.visibility = "visible"; 
+			c5.style.visibility = "visible"; 
+			c6.style.visibility = "visible"; 
+			c7.style.visibility = "visible"; }
+	 else if(x<30)
+	 	{c3.style.background= "url(image/sr.png)";}
+	else if(x<90)
+		{c3.style.background= "url(image/r.png)";}
+	else{c3.style.background= "url(image/n.png)";}
+		}
+	return false;
+
+}
+
+
+</script>
+</html>

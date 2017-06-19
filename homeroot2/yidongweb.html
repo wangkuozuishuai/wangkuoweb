@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no" />
+	<title>移动端简历</title>
+	<link rel="stylesheet" href="css/ydweb.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/resLoader.js"></script>
+	<style>
+.progress{
+	width: 80%;
+	height:2vw;
+	border:2px solid #666;
+	position: absolute;
+	left: 0;top: 0;right: 0;bottom: 0;
+	margin:auto;
+}
+.progressbar{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 100%;
+	background-color: gray;
+	-webkit-transition:width ease-in 200ms;
+}
+.progresstext{
+	position: absolute;
+	top: 30px;
+	right: 0;
+}
+#zuida
+{
+	display:none;
+	height:100%;
+	width:100%;
+}
+</style>
+	<script>
+var loader = new resLoader({
+	resources : [
+		'image/page1bg.jpg',
+		'image/page2bg.jpg',
+		'image/page3bg.jpg',
+		'image/page4bg.jpg',
+		'image/page5bg.jpg',
+		'image/page6bg.jpg',
+		'image/page7bg.jpg',
+		'image/beijing.jpg',
+	],
+	onStart : function(total){
+		// console.log('start:'+total);
+	},
+	onProgress : function(current, total){
+		console.log(current+'/'+total);
+		var percent = current/total*100;
+		$('.progressbar').css('width', percent+'%');
+		$('.progresstext .current').text(current);
+		$('.progresstext .total').text(total);
+	},
+	onComplete : function(total){
+		setTimeout (function(){
+			 $('#zuida').css('display','block');
+		     $('.progress').css('display','none');
+		},500)		
+
+	}
+});
+
+loader.start();
+	</script>
+</head>
+<body>
+<div class="progress">
+	<div class="progressbar"></div>
+	<div class="progresstext">
+		<span class="current"></span>/
+		<span class="total"></span>
+	</div>
+</div>
+<div id="zuida">
+<div>
+	<img id="music" class="music" />
+</div>
+<div class="page" id="page1" >
+<div class="bg"></div>
+</div>
+
+<div class="page" id="page2" >
+<div class="bg"></div>
+<div class="quan"></div>
+</div>
+
+<div class="page" id="page3" >
+<div class="bg"></div>
+<div class="text" id="text1">
+<p class="text1p" id = "text1p1">感谢您的开启。</p>
+<p class="text1p" id = "text1p2">我是一个普普通通的本科毕业生。</p>
+<p class="text1p" id = "text1p3">去年刚刚毕业。</p>
+<p class="text1p" id = "text1p4">没有什么梦想，也没有什么规划。</p>
+<p class="text1p" id = "text1p5">但是贼积极乐观。</p></div>
+<div id="hua"></div>
+</div>
+
+
+<div class="page" id="page4" >
+<div class="bg"></div>
+<div class="text" id="text2">
+<p class="text2p" id="text2p1">我毕业于北方工业大学计算机学院。</p><br>
+<p class="text2p" id="text2p2">是个德智体美劳全面发展的好孩子。</p><br>
+<p class="text2p" id="text2p3">人送绰号计院一枝花。</p></div>
+<div id="hua"></div>
+</div>
+
+<div class="page" id="page5" >
+<div class="bg"></div>
+<div class="text" id="text3"><p class="text3p" id="text3p0">工作经历：<br>
+<p class="text3p" id="text3p1">清华附中校办实习过一阵子。</p>
+<p class="text3p" id="text3p2">金融公司做销售骗人一阵子。</p>
+<p class="text3p" id="text3p3">目前在一家国企混吃等死。</p></div>
+<div id="hua"></div>
+</div>
+
+<div class="page" id="page6" >
+<div class="bg"></div>
+<div class="text" id="text4"><p class="taitou">技能：</p>
+<p class="textp1">熟练应用：HTML5、CSS3、JS、PS</p>
+<p class="textp2">半熟练应用：JQ、BOOTSTRAP</p>
+<p class="textp3">半半熟练应用：Vue.js、PHP</p>
+<p class="textp4">半半半熟练应用：Node.js、AugularJS、React</p></div>
+<div id="hua"></div>
+</div>
+
+
+<div class="page" id="page7" >
+<div class="bg"></div>
+<div class="text" id="text5">
+<p class='text5title'>再次感谢您的开启。</p>
+<p class="text5move1">Hey I just met you</p>
+<p class="text5move2">and this is crazy</p>
+<p class="text5move3">But here’s my number</p>
+<p class="text5move4">So, Call Me Maybe!</p>
+<p class="text5move5">18701452123</p>
+</div>
+<div class="ccopy"><p>&copy王阔</p></div>
+</div>
+
+
+<div class="page" id="pagelow">
+<div class="bg"></div>
+</div>
+<!-- <div id="xiayiye"><span>向上继续</span></div> -->
+<audio id="audio" loop="loop">
+	<source src="callme.mp3" type="audio/mpeg"/>
+</audio>
+
+</div>
+</body>
+<script src='js/jqSwipe.js'></script>
+<script>
+
+
+window.onresize = function(){
+
+ if(confirm('浏览器大小发生变化，为保证网页加载正常，是否刷新页面？'))
+{window.location.href="index.html";}else{};};
+
+window.onload= function (){
+	var audio = document.getElementById('audio');
+	var music = document.getElementById('music');
+
+
+
+	music.addEventListener("touchstart",function(event){
+		if(audio.paused)
+		{
+			audio.play();
+			// this.style.animationPlayState = "running";
+			music.setAttribute('class','music musiczhuan');
+		}
+		else
+		{
+			audio.pause();
+			// this.style.animationPlayState = "paused";
+			music.setAttribute('class','music');
+		}
+	},false);
+
+	var page1 = document.getElementById('page1');
+	var page2 = document.getElementById('page2');
+	var page3 = document.getElementById('page3');
+	var pagelow = document.getElementById('pagelow');
+	var text1 = document.getElementById('text1');
+
+
+
+
+page1.addEventListener('touchstart',function(event){
+	page1.setAttribute('class','page display');
+	music.setAttribute('class','music musiczhuan');
+	audio.play();
+
+	setTimeout(function(){
+		page1.style.display="none";
+		page2.style.display="block";
+
+	},1000);
+
+	setTimeout(function(){
+		page2.setAttribute('class','page fadeout');
+		 pagelow.style.display="block";
+	},6000);
+	setTimeout(function(){
+		$('#page3').slideDown(500);
+	},7000);
+	setTimeout(function(){
+		pagelow.style.display="none";
+		page2.style.display="none";
+	},9000);
+	},false);
+
+
+
+
+
+$('#page3').on('swipe', function(e, Dx, Dy){
+			if (Dy<0) 
+			{
+				$('#page3').slideUp(500);
+				$('#page1').slideDown(500);	
+				page1.style.display="block";
+				page2.style.display="none";
+				page3.style.display="none";
+				page1.setAttribute('class','page');
+				page2.setAttribute('class','page');
+				page3.setAttribute('class','page');
+			}
+			if (Dy>0)
+			{	
+
+				$('#xiayiye').css('display','none');
+				$('#page3').slideUp(500);
+				$('#page4').css('display','block');
+				setTimeout(function(){
+					$('#page3').css('display','none')},500);
+			}
+		});
+
+
+$('#page4').on('swipe', function(e, Dx, Dy){
+			if (Dy<0) 
+			{
+				$('#page3').slideDown(500);
+				setTimeout(function(){
+					$('#page4').css('display','none')},500);
+			}
+			if (Dy>0)
+			{
+
+				$('#page4').slideUp(500);
+				$('#page5').css('display','block');
+				setTimeout(function(){
+					$('#page4').css('display','none')},500);	
+			}
+		});
+
+$('#page5').on('swipe', function(e, Dx, Dy){
+			if (Dy<0) 
+			{
+				$('#page4').slideDown(500);
+		 		setTimeout(function(){
+					$('#page5').css('display','none')},500);
+		 	}
+			if (Dy>0)
+			{
+
+				$('#page5').slideUp(500);
+				$('#page6').css('display','block');
+				setTimeout(function(){
+					$('#page5').css('display','none')},500);
+			}
+		});
+
+$('#page6').on('swipe', function(e, Dx, Dy){
+			if (Dy<0) 
+			{
+
+				$('#page5').slideDown(500);
+				setTimeout(function(){
+					$('#page6').css('display','none')},500);
+			}
+
+			if (Dy>0)
+			{
+				$('#page6').slideUp(500);
+				$('#page7').css('display','block');
+				setTimeout(function(){
+					$('#page6').css('display','none')},500);
+			}
+		});
+$('#page7').on('swipe', function(e, Dx, Dy){
+			if (Dy<0) 
+			{
+
+				$('#page6').slideDown(500);
+				setTimeout(function(){
+				$('#page7').css('display','none')},500);
+		
+			}
+		});
+
+}
+</script>
+</html>
